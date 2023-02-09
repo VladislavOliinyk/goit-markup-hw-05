@@ -43,7 +43,7 @@
   --shadow-bt-hero: 0px 4px 4px rgba(0, 0, 0, 0.15);
   --shadow-portfolio-items: 0px 1px 6px rgba(46, 47, 66, 0.08),
   0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-
+  --bgcolor-underlibe-actheader: #404BBF;
 }
 
 /* RESET STYLE */
@@ -97,17 +97,16 @@ body {
 }
 
 /* Властивості навігації та заголовків секцій */
-.navigation,
-.navigation a {
-  color: var(--title-text-color);
-  padding: 0;
-  margin: 0;
+.navigation {
   display: flex;
 }
 
 .navigation a {
+  padding: 0;
+  margin: 0;
   padding-top: 24px;
   padding-bottom: 24px;
+  color: var(--title-text-color);
 }
 
 .container.main-nav {
@@ -115,11 +114,31 @@ body {
   align-items: center;
 }
 
+/* Анімація ховера та фокуса навігації */
+.link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* Властивості ховера посилань навігації */
 .link:hover,
 .link:focus,
 .link.current {
   color: var(--navigation-hover-color);
+}
+
+.navigation.list .link {
+position: relative;
+}
+
+.link.current::after {
+  position: absolute;
+  bottom: -1px;
+  content:"";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: var(--bgcolor-underlibe-actheader);
+  border-radius: 2px;
 }
 
 /* Властивості заголовків секцій */
@@ -135,7 +154,6 @@ body {
 /* Властивості навігації */
 .navigation.list .list {
   display: flex;
-  display: block;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -217,6 +235,8 @@ body {
   border: none;
   padding: 16px 32px 16px 32px;
   box-shadow: var(--shadow-bt-hero);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow  250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Властивості наведення на кнопку героя */
