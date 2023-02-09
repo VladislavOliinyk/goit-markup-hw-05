@@ -44,6 +44,7 @@
   --shadow-portfolio-items: 0px 1px 6px rgba(46, 47, 66, 0.08),
   0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   --bgcolor-underlibe-actheader: #404BBF;
+  --main-animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* RESET STYLE */
@@ -116,7 +117,7 @@ body {
 
 /* Анімація ховера та фокуса навігації */
 .link {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--main-animation);
 }
 
 /* Властивості ховера посилань навігації */
@@ -236,7 +237,7 @@ position: relative;
   padding: 16px 32px 16px 32px;
   box-shadow: var(--shadow-bt-hero);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow  250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--main-animation), box-shadow  var(--main-animation);
 }
 
 /* Властивості наведення на кнопку героя */
@@ -320,6 +321,8 @@ position: relative;
   align-items: center;
   padding: 0;
   display: flex;
+
+  transition: background var(--main-animation);
 }
 
 .footer-link:hover {
@@ -376,15 +379,17 @@ position: relative;
   justify-content: center;
   align-items: center;
   padding: 0;
-  display: flex;
   border-radius: 50%;
   width: 40px;
   height: 40px;
   background: var(--bgcolor-icon-social-team);
   cursor: pointer;
+
+  transition: background var(--main-animation);
 }
 
-.icon-social-team:hover {
+.icon-social-team:hover,
+.icon-social-team:focus {
   background: var(--bgcolor-icon-social-team-hover);
 }
 
@@ -465,6 +470,8 @@ a {
   cursor: pointer;
   justify-content: center;
   align-items: center;
+
+  transition: fill var(--main-animation), border var(--main-animation);
 }
 
 .customers-icon:hover {
@@ -486,8 +493,7 @@ a {
   letter-spacing: 0.04em;
   line-height: 1.5;
   padding: 12px 24px;
-  /* box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12); */
+  transition: color var(--main-animation), ackground-color var(--main-animation), box-shadow var(--main-animation);
 }
 
 .filter-button:hover,
@@ -495,12 +501,12 @@ a {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
     border: transparent;
+    color: var(--color-button-portfolio);
+    background-color: var(--navigation-hover-color);
 }
 
-/* Ефект ховера для секції фільтру */
-.filter-button:hover {
-  color: var(--color-button-portfolio);
-  background-color: var(--navigation-hover-color);
+.portfolio-link {
+  transition: box-shadow var(--main-animation);
 }
 
 .portfolio-link:hover,
