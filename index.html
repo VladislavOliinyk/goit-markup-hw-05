@@ -50,7 +50,7 @@
             <div class="container hero">
                 <h1 class="hero-title">Effective Solutions
                     for Your Business</h1>
-                <button type="button" class="button">Order Service</button>
+                <button type="button" class="button" data-modal-open>Order Service</button>
             </div>
         </section>
         <!-- Секція переваги -->
@@ -390,13 +390,19 @@
         </div>
     </footer>
 
-        <div class="backdrop">
-            <div class="modal">
-                <button type="button"></button>
-            </div>
-        </div>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" class="modal-close-btn" data-modal-close>
+                <svg class="modal-btn-icon" width="8px" height="8px">
+                    <use href="./images/icons.svg#icon-close-modal">
 
-        <script src="./js/modal.js"></script>
+                    </use>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
